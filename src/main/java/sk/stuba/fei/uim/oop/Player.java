@@ -8,7 +8,6 @@ public class Player extends JPanel implements ActionListener{
 	
 	private int xPos=1;
 	private int yPos=1;
-	private int wins=0;
 	private final Board board;
 	
 	public Player(Board board){
@@ -74,7 +73,8 @@ public class Player extends JPanel implements ActionListener{
 	}
 	
 	public void Win(){
-		new Maze(++wins);
+		board.set(xPos, yPos, 'p');
+		new Maze(board.getWins()+1);
         repaint();        
 	}	
 }	

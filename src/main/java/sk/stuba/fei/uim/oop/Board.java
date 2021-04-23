@@ -10,8 +10,10 @@ public class Board extends JPanel {
 	
 	private char[][] board;
 	private int size;
-
-	public Board(int size){
+	private int wins;
+	
+	public Board(int size,int wins){
+		this.wins = wins;
 		size *= 2; 
 		size++;
 		board = new char [size][size];
@@ -56,7 +58,7 @@ public class Board extends JPanel {
 					g.setColor(Color.red); //finish
 					g.fillRect(i*n, j*n, n, n);
 				} else if(board[i][j] == 'p'){
-					g.setColor(Color.blue); //player
+					g.setColor(Color.green); //player
 					g.fillRect(i*n, j*n, n, n);
 				}
 			}
@@ -71,6 +73,7 @@ public class Board extends JPanel {
 		board[x][y] = value;
         repaint();
 	}
+
 		
 
 	public char[] findCandidates(Position cC){
@@ -122,6 +125,9 @@ public class Board extends JPanel {
 		int xBridge=(cell1.getX()+cell2.getX())/2;
 		int yBridge=(cell1.getY()+cell2.getY())/2;
 		set(xBridge, yBridge, 'v');
+	}
+	public int getWins() {
+		return wins;
 	}
 }
 

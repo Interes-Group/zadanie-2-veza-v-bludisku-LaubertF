@@ -17,7 +17,7 @@ public class Maze {
 	
 
 	public Maze(int counterN){		
-		final Board board = new Board(12);
+		final Board board = new Board(12, counterN);
 		final Player player = new Player(board);
         JLabel counter = new JLabel(String.valueOf(counterN),JLabel.CENTER);
         JLabel counterLabel = new JLabel("Counter:",JLabel.CENTER);
@@ -93,10 +93,14 @@ public class Maze {
 		{
 			public void keyPressed(KeyEvent e){				
 				int keyCode = e.getKeyCode();
-				if(e.getKeyChar() == 'a' || keyCode == KeyEvent.VK_LEFT) player.moveLeft(board);
-				if(e.getKeyChar() == 'd' || keyCode == KeyEvent.VK_RIGHT) player.moveRight(board);
-				if(e.getKeyChar() == 'w' || keyCode == KeyEvent.VK_UP) player.moveUp(board);
-				if(e.getKeyChar() == 's' || keyCode == KeyEvent.VK_DOWN) player.moveDown(board);
+				if(keyCode == KeyEvent.VK_LEFT)
+					player.moveLeft(board);
+				if(keyCode == KeyEvent.VK_RIGHT)
+					player.moveRight(board);
+				if(keyCode == KeyEvent.VK_UP)
+					player.moveUp(board);
+				if(keyCode == KeyEvent.VK_DOWN)
+					player.moveDown(board);
 			}
 		});	
 		

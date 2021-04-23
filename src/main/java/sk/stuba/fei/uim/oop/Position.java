@@ -1,14 +1,11 @@
 package sk.stuba.fei.uim.oop;
 
 public class Position{
-    int x; int y;
+    int x = 0; 
+    int y = 0;
     public Position(int x, int y){
         this.x = x;
         this.y = y;
-    }
-    public Position(){
-        this.x = 0;
-        this.y = 0;
     }
     public int getX(){
         return x;
