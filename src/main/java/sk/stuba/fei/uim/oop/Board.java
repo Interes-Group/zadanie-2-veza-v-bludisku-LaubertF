@@ -44,7 +44,7 @@ public class Board extends JPanel {
 
 	public void paint(Graphics g){
 		super.paint(g);
-		int n = 500/(size+10);
+		int n = 15;
 		
 		for(int i = 0; i < size; i++){
 			for( int j = 0;j  < size; j++){
